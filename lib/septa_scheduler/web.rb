@@ -11,7 +11,7 @@ module SeptaScheduler
       )
 
       schedules = [schedule(stops[0], params['route']),
-        schedule(stops[1], params['route'])]
+                   schedule(stops[1], params['route'])]
 
       {
         inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
