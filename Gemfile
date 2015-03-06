@@ -3,3 +3,8 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'thin'
 gem 'septa_stop_locator', path: '../septa_stop_locator'
+
+group :test do
+  gem "rspec"
+  gem "rack-test"
+end
