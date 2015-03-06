@@ -4,6 +4,9 @@ require 'septa_stop_locator'
 module SeptaScheduler
   class Web < Sinatra::Base
     get '/' do
+    end
+
+    get '/point' do
       stops = SeptaStopLocator.find(
         params['lat'].to_f,
         params['lng'].to_f,
