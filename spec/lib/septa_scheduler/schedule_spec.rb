@@ -26,11 +26,11 @@ describe SeptaScheduler::Schedule do
       end
 
       it 'has a date' do
-        expect(@stop['date'].class).to eq String
+        expect(@stop['date']).to eq '12:50p'
       end
 
       it 'has a day' do
-        expect(@stop['day'].class).to eq String
+        expect(@stop['day']).to eq 'Sat'
       end
 
       it 'has a Direction' do
@@ -38,7 +38,7 @@ describe SeptaScheduler::Schedule do
       end
 
       it 'has a DateCalendar' do
-        expect(@stop['DateCalender'].class).to eq String
+        expect(@stop['DateCalender']).to eq '03/07/15 12:50 pm'
       end
     end
   end
