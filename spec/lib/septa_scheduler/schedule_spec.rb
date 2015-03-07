@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe SeptaScheduler::Schedule do
   describe '#get' do
-    before :each do
+    use_vcr_cassette
+
+    before do
       @schedule = SeptaScheduler::Schedule.new(20869, 34)
     end
 

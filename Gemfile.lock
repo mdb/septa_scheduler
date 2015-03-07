@@ -7,6 +7,9 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.3.7)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     daemons (1.1.9)
     diff-lcs (1.2.5)
     eventmachine (1.0.7)
@@ -29,6 +32,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
+    safe_yaml (1.0.4)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -38,6 +42,10 @@ GEM
       eventmachine (~> 1.0)
       rack (~> 1.0)
     tilt (1.4.1)
+    vcr (2.9.3)
+    webmock (1.20.4)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
@@ -48,3 +56,5 @@ DEPENDENCIES
   septa_stop_locator!
   sinatra
   thin
+  vcr
+  webmock

@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www3.septa.org/hackathon/BusSchedules/?req1=20869&req2=34
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 07 Mar 2015 17:42:50 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '534'
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      X-B-Srvr:
+      - API2
+      X-Gw-Rp:
+      - '3'
+    body:
+      encoding: UTF-8
+      string: '{"34":[{"StopName":"Baltimore Av & 50th St","Route":"34","date":"12:50p","day":"Sat","Direction":"0","DateCalender":"03\/07\/15
+        12:50 pm"},{"StopName":"Baltimore Av & 50th St","Route":"34","date":"12:53p","day":"Sat","Direction":"0","DateCalender":"03\/07\/15
+        12:53 pm"},{"StopName":"Baltimore Av & 50th St","Route":"34","date":"1:08p","day":"Sat","Direction":"0","DateCalender":"03\/07\/15
+        01:08 pm"},{"StopName":"Baltimore Av & 50th St","Route":"34","date":"1:23p","day":"Sat","Direction":"0","DateCalender":"03\/07\/15
+        01:23 pm"}]}'
+    http_version: 
+  recorded_at: Sat, 07 Mar 2015 17:42:54 GMT
+recorded_with: VCR 2.9.3
