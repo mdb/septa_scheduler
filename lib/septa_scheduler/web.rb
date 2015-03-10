@@ -22,6 +22,24 @@ module SeptaScheduler
       }.to_json
     end
 
+    get '/address' do
+      coordinates = SeptaScheduler::Geocoder.new(params['address']).coordinates
+
+      stops = SeptaStopLocator.find(
+        coordinates['lat'],
+        coordinates['lng'],
+        params['route']
+      )
+
+      schedules = [schedule(stops[0], params['route']),
+                   schedule(stops[1], params['route'])]
+
+      {
+        inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
+        outbound: schedules.find { |sched| sched[0]['Direction'] != '1' }
+      }.to_json
+    end
+
     def schedule(stop, route)
       SeptaScheduler::Schedule
       .new(stop['stopid'], route)
