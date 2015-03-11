@@ -1,14 +1,14 @@
-PATH
-  remote: ../septa_stop_locator
+GIT
+  remote: https://github.com/mdb/septa_stop_locator.git
+  revision: 187f4deeadb0b47df544032f2a7c1def6b4aafc2
   specs:
     septa_stop_locator (0.0.1)
-      haversine
+      haversine (= 0.3.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.7)
-    coderay (1.1.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     daemons (1.1.9)
@@ -17,12 +17,7 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     haversine (0.3.0)
-    method_source (0.8.2)
     multipart-post (2.0.0)
-    pry (0.10.1)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
@@ -46,7 +41,6 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    slop (3.6.0)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -62,7 +56,6 @@ PLATFORMS
 
 DEPENDENCIES
   faraday
-  pry
   rack-test
   rspec
   septa_stop_locator!
