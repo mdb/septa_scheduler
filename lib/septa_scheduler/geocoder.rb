@@ -1,11 +1,13 @@
-require 'faraday'
+require 'septa_scheduler/concerns/http'
 
 module SeptaScheduler
   class Geocoder
+    include SeptaScheduler::Http
+
     def initialize(address)
       address = "#{address}, Philadelphia, PA"
 
-      @uri = "https://maps.googleapis.com/maps/api/geocode/json?address=#{URI.encode(address)}"
+      @uri = URI.parse("https://maps.googleapis.com/maps/api/geocode/json?address=#{URI.encode(address)}")
     end
 
     def coordinates
@@ -15,11 +17,7 @@ module SeptaScheduler
     private
 
     def geocode
-      JSON.parse(get.body)
-    end
-
-    def get
-      Faraday.get(@uri)
+      JSON.parse(do_get(@uri))
     end
   end
 end

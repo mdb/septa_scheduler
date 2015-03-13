@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=5018%20Walton%20Street,%20Philadelphia,%20PA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - maps.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 13 Mar 2015 12:04:45 GMT
+      Expires:
+      - Sat, 14 Mar 2015 12:04:45 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic,p=0.5
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Language,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "5018",
+                       "short_name" : "5018",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Walton Avenue",
+                       "short_name" : "Walton Ave",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Cobbs Creek",
+                       "short_name" : "Cobbs Creek",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Philadelphia",
+                       "short_name" : "Philadelphia",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Philadelphia County",
+                       "short_name" : "Philadelphia County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Pennsylvania",
+                       "short_name" : "PA",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "19143",
+                       "short_name" : "19143",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "1630",
+                       "short_name" : "1630",
+                       "types" : [ "postal_code_suffix" ]
+                    }
+                 ],
+                 "formatted_address" : "5018 Walton Avenue, Philadelphia, PA 19143, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.949088,
+                       "lng" : -75.223868
+                    },
+                    "location_type" : "ROOFTOP",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.95043698029149,
+                          "lng" : -75.22251901970849
+                       },
+                       "southwest" : {
+                          "lat" : 39.9477390197085,
+                          "lng" : -75.22521698029149
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ8WqMherGxokRjM-oLhFCDBw",
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Fri, 13 Mar 2015 12:04:46 GMT
+recorded_with: VCR 2.9.3

@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe SeptaScheduler::Web do
   describe '/' do
-    use_vcr_cassette
-
     before { get '/' }
 
     it 'is successful' do
@@ -12,7 +10,7 @@ describe SeptaScheduler::Web do
   end
 
   describe '/point' do
-    use_vcr_cassette
+    use_vcr_cassette 'web'
 
     before { get '/point?lat=39.946936&lng=-75.235519&route=34' }
 

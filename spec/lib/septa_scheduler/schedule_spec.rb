@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe SeptaScheduler::Schedule do
   describe '#get' do
-    use_vcr_cassette
+    use_vcr_cassette 'schedule'
 
     before do
       @schedule = SeptaScheduler::Schedule.new(20869, 34)
@@ -26,11 +26,11 @@ describe SeptaScheduler::Schedule do
       end
 
       it 'has a date' do
-        expect(@stop['date']).to eq '12:50p'
+        expect(@stop['date']).to eq '8:06a'
       end
 
       it 'has a day' do
-        expect(@stop['day']).to eq 'Sat'
+        expect(@stop['day']).to eq 'Fri'
       end
 
       it 'has a Direction' do
@@ -38,7 +38,7 @@ describe SeptaScheduler::Schedule do
       end
 
       it 'has a DateCalendar' do
-        expect(@stop['DateCalender']).to eq '03/07/15 12:50 pm'
+        expect(@stop['DateCalender']).to eq '03/13/15 08:06 am'
       end
     end
   end
