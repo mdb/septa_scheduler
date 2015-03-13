@@ -13,8 +13,7 @@ module SeptaScheduler
         params['route']
       )
 
-      schedules = [schedule(stops[0], params['route']),
-                   schedule(stops[1], params['route'])]
+      schedules = schedules_from(stops, params['route'])
 
       {
         inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
@@ -31,8 +30,7 @@ module SeptaScheduler
         params['route']
       )
 
-      schedules = [schedule(stops[0], params['route']),
-                   schedule(stops[1], params['route'])]
+      schedules = schedules_from(stops, params['route'])
 
       {
         inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
@@ -44,6 +42,11 @@ module SeptaScheduler
       SeptaScheduler::Schedule
       .new(stop['stopid'], route)
       .get[route]
+    end
+
+    def schedules_from(stops, route)
+      [schedule(stops[0], route),
+       schedule(stops[1], route)]
     end
   end
 end
