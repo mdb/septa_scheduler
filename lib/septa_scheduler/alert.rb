@@ -18,6 +18,10 @@ module SeptaScheduler
       @detour ||= get['detour_message']
     end
 
+    def detour_reason
+      @detour_reason ||= get['detour_reason']
+    end
+
     private
 
     def get

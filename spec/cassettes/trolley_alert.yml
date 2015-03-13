@@ -45,7 +45,7 @@ http_interactions:
       - '3'
     body:
       encoding: UTF-8
-      string: '[{"route_id":"trolley_route_34","route_name":"34","current_message":"some trolley message","advisory_message":"","detour_message":"trolley detour","detour_start_location":"","detour_start_date_time":"","detour_end_date_time":"","detour_reason":"","last_updated":"Mar
+      string: '[{"route_id":"trolley_route_34","route_name":"34","current_message":"some trolley message","advisory_message":"","detour_message":"trolley detour","detour_start_location":"","detour_start_date_time":"","detour_end_date_time":"","detour_reason":"trolley detour reason","last_updated":"Mar
         13 2015 08:51:41:473AM","isSnow":"N"}]'
     http_version: 
   recorded_at: Fri, 13 Mar 2015 20:32:06 GMT
