@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=bus_route_24
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www3.septa.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 13 Mar 2015 20:32:03 GMT
+      Server:
+      - Apache
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Last-Modified:
+      - Fri, 13 Mar 2015 20:32:03 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '267'
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      X-B-Srvr:
+      - API1
+      X-Gw-Rp:
+      - '3'
+    body:
+      encoding: UTF-8
+      string: '[{"route_id":"bus_route_24","route_name":"24","current_message":"some bus message","advisory_message":"","detour_message":"","detour_start_location":"","detour_start_date_time":"","detour_end_date_time":"","detour_reason":"","last_updated":"Mar  5
+        2015 04:18:44:513PM","isSnow":"N"}]'
+    http_version: 
+  recorded_at: Fri, 13 Mar 2015 20:32:06 GMT
+recorded_with: VCR 2.9.3

@@ -4,10 +4,10 @@ module SeptaScheduler
   class Alert
     include SeptaScheduler::Http
 
-    def initialize(param)
-      @uri = URI.parse("http://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=#{param}")
+    TROLLEY_ROUTES = ['10', '11', '13', '15', '34', '36']
 
-      puts @uri
+    def initialize(route_id)
+      @uri = URI.parse("http://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=#{route_param(route_id)}")
     end
 
     def message
@@ -18,6 +18,12 @@ module SeptaScheduler
 
     def get
       JSON.parse(do_get(@uri))[0]
+    end
+
+    def route_param(route_id)
+      transit_type = TROLLEY_ROUTES.include?(route_id) ? 'trolley' : 'bus'
+
+      "#{transit_type}_route_#{route_id}"
     end
   end
 end
