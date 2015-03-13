@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=trolley_route_34
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www3.septa.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 13 Mar 2015 15:47:29 GMT
+      Server:
+      - Apache
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Last-Modified:
+      - Fri, 13 Mar 2015 15:47:29 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '271'
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      X-B-Srvr:
+      - API4
+      X-Gw-Rp:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '[{"route_id":"trolley_route_34","route_name":"34","current_message":"some message","advisory_message":"","detour_message":"","detour_start_location":"","detour_start_date_time":"","detour_end_date_time":"","detour_reason":"","last_updated":"Mar
+        13 2015 08:51:41:473AM","isSnow":"N"}]'
+    http_version: 
+  recorded_at: Fri, 13 Mar 2015 15:47:31 GMT
+recorded_with: VCR 2.9.3
