@@ -15,10 +15,7 @@ module SeptaScheduler
 
       schedules = schedules_from(stops, params['route'])
 
-      {
-        inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
-        outbound: schedules.find { |sched| sched[0]['Direction'] != '1' }
-      }.to_json
+      response_from(schedules)
     end
 
     get '/address' do
@@ -32,10 +29,7 @@ module SeptaScheduler
 
       schedules = schedules_from(stops, params['route'])
 
-      {
-        inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
-        outbound: schedules.find { |sched| sched[0]['Direction'] != '1' }
-      }.to_json
+      response_from(schedules)
     end
 
     def schedule(stop, route)
@@ -47,6 +41,13 @@ module SeptaScheduler
     def schedules_from(stops, route)
       [schedule(stops[0], route),
        schedule(stops[1], route)]
+    end
+
+    def response_from(schedules)
+      {
+        inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
+        outbound: schedules.find { |sched| sched[0]['Direction'] != '1' }
+      }.to_json
     end
   end
 end
