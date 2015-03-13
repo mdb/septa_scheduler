@@ -26,4 +26,16 @@ describe SeptaScheduler::Alert do
       end
     end
   end
+
+  describe '#detour' do
+    use_vcr_cassette 'trolley_alert'
+
+    before do
+      @detour = SeptaScheduler::Alert.new('34').detour
+    end
+
+    it 'reports a message from the correct endpoint' do
+      expect(@detour).to eq('trolley detour')
+    end
+  end
 end
