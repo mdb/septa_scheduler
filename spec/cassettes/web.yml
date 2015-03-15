@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 13 Mar 2015 12:11:31 GMT
+      - Sun, 15 Mar 2015 21:36:12 GMT
       Server:
       - Apache
       Content-Length:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json
       X-B-Srvr:
-      - API3
+      - API0
       X-Gw-Rp:
       - '3'
     body:
@@ -99,7 +99,7 @@ http_interactions:
         St &amp; Market St"},{"lng":-75.165369,"lat":39.952502,"stopid":31140,"stopname":"15th
         St Trolley Station"}]'
     http_version: 
-  recorded_at: Fri, 13 Mar 2015 12:11:32 GMT
+  recorded_at: Sun, 15 Mar 2015 21:36:17 GMT
 - request:
     method: get
     uri: http://www3.septa.org/hackathon/BusSchedules/?req1=20892&req2=34
@@ -117,32 +117,30 @@ http_interactions:
       - www3.septa.org
   response:
     status:
-      code: 200
-      message: OK
+      code: 500
+      message: Internal Server Error
     headers:
       Date:
-      - Fri, 13 Mar 2015 12:11:28 GMT
+      - Sun, 15 Mar 2015 21:36:10 GMT
       Server:
       - Apache
       Content-Length:
       - '532'
-      Connection:
-      - close
       Content-Type:
       - application/json
       X-B-Srvr:
-      - API1
+      - API2
       X-Gw-Rp:
       - '3'
     body:
       encoding: UTF-8
-      string: '{"34":[{"StopName":"Baltimore Av & 56th St","Route":"34","date":"8:15a","day":"Fri","Direction":"1","DateCalender":"03\/13\/15
-        08:15 am"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"8:19a","day":"Fri","Direction":"1","DateCalender":"03\/13\/15
-        08:19 am"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"8:23a","day":"Fri","Direction":"1","DateCalender":"03\/13\/15
-        08:23 am"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"8:26a","day":"Fri","Direction":"1","DateCalender":"03\/13\/15
-        08:26 am"}]}'
+      string: '{"34":[{"StopName":"Baltimore Av & 56th St","Route":"34","date":"5:45p","day":"Sun","Direction":"1","DateCalender":"03\/15\/15
+        05:45 pm"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"6:05p","day":"Sun","Direction":"1","DateCalender":"03\/15\/15
+        06:05 pm"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"6:15p","day":"Sun","Direction":"1","DateCalender":"03\/15\/15
+        06:15 pm"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"6:25p","day":"Sun","Direction":"1","DateCalender":"03\/15\/15
+        06:25 pm"}]}'
     http_version: 
-  recorded_at: Fri, 13 Mar 2015 12:11:33 GMT
+  recorded_at: Sun, 15 Mar 2015 21:36:18 GMT
 - request:
     method: get
     uri: http://www3.septa.org/hackathon/BusSchedules/?req1=20863&req2=34
@@ -164,7 +162,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 13 Mar 2015 12:11:32 GMT
+      - Sun, 15 Mar 2015 21:36:13 GMT
       Server:
       - Apache
       Content-Length:
@@ -174,16 +172,65 @@ http_interactions:
       Content-Type:
       - application/json
       X-B-Srvr:
-      - API2
+      - API0
       X-Gw-Rp:
       - '2'
     body:
       encoding: UTF-8
-      string: '{"34":[{"StopName":"Baltimore Av & 56th St","Route":"34","date":"8:13a","day":"Fri","Direction":"0","DateCalender":"03\/13\/15
-        08:13 am"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"8:16a","day":"Fri","Direction":"0","DateCalender":"03\/13\/15
-        08:16 am"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"8:22a","day":"Fri","Direction":"0","DateCalender":"03\/13\/15
-        08:22 am"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"8:25a","day":"Fri","Direction":"0","DateCalender":"03\/13\/15
-        08:25 am"}]}'
+      string: '{"34":[{"StopName":"Baltimore Av & 56th St","Route":"34","date":"5:43p","day":"Sun","Direction":"0","DateCalender":"03\/15\/15
+        05:43 pm"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"5:55p","day":"Sun","Direction":"0","DateCalender":"03\/15\/15
+        05:55 pm"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"6:03p","day":"Sun","Direction":"0","DateCalender":"03\/15\/15
+        06:03 pm"},{"StopName":"Baltimore Av & 56th St","Route":"34","date":"6:15p","day":"Sun","Direction":"0","DateCalender":"03\/15\/15
+        06:15 pm"}]}'
     http_version: 
-  recorded_at: Fri, 13 Mar 2015 12:11:35 GMT
+  recorded_at: Sun, 15 Mar 2015 21:36:19 GMT
+- request:
+    method: get
+    uri: http://www3.septa.org/hackathon/Alerts/get_alert_data.php?req1=trolley_route_34
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www3.septa.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 15 Mar 2015 21:36:12 GMT
+      Server:
+      - Apache
+      Expires:
+      - Mon, 26 Jul 1997 05:00:00 GMT
+      Last-Modified:
+      - Sun, 15 Mar 2015 21:36:12 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      - post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '271'
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+      X-B-Srvr:
+      - API5
+      X-Gw-Rp:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '[{"route_id":"trolley_route_34","route_name":"34","current_message":"current message","advisory_message":"advisory message","detour_message":"detour message","detour_start_location":"detour start location","detour_start_date_time":"start date time","detour_end_date_time":"end date time","detour_reason":"reason","last_updated":"Mar
+        15 2015 04:59:05:003PM","isSnow":"N"}]'
+    http_version: 
+  recorded_at: Sun, 15 Mar 2015 21:36:20 GMT
 recorded_with: VCR 2.9.3

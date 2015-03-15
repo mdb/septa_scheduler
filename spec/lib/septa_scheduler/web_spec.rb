@@ -52,6 +52,50 @@ describe SeptaScheduler::Web do
           end
         end
       end
+
+      context 'the alert' do
+        before { @alert = @response['alert'] }
+
+        it 'reports a "route_id"' do
+          expect(@alert['route_id']).to eq 'trolley_route_34'
+        end
+
+        it 'reports a "route_name"' do
+          expect(@alert['route_name']).to eq '34'
+        end
+
+        it 'reports an "advisory_message"' do
+          expect(@alert['advisory_message']).to eq 'advisory message'
+        end
+
+        it 'reports a "detour_message"' do
+          expect(@alert['detour_message']).to eq 'detour message'
+        end
+
+        it 'reports a "detour_start_location"' do
+          expect(@alert['detour_start_location']).to eq 'detour start location'
+        end
+
+        it 'reports a "detour_start_date_time"' do
+          expect(@alert['detour_start_date_time']).to eq 'start date time'
+        end
+
+        it 'reports a "detour_end_date_time"' do
+          expect(@alert['detour_end_date_time']).to eq 'end date time'
+        end
+
+        it 'reports a "detour_reason"' do
+          expect(@alert['detour_reason']).to eq 'reason'
+        end
+
+        it 'reports a "last_updated"' do
+          expect(@alert['last_updated']).to eq 'Mar 15 2015 04:59:05:003PM'
+        end
+
+        it 'reports an "isSnow"' do
+          expect(@alert['isSnow']).to eq 'N'
+        end
+      end
     end
   end
 end

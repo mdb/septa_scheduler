@@ -44,9 +44,12 @@ module SeptaScheduler
     end
 
     def response_from(schedules)
+      alert = SeptaScheduler::Alert.new('34')
+
       {
         inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
-        outbound: schedules.find { |sched| sched[0]['Direction'] != '1' }
+        outbound: schedules.find { |sched| sched[0]['Direction'] != '1' },
+        alert: alert.to_hash
       }.to_json
     end
   end
