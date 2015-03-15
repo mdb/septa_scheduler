@@ -50,4 +50,28 @@ describe SeptaScheduler::Alert do
       expect(@reason).to eq('trolley detour reason')
     end
   end
+
+  describe '#to_hash' do
+    use_vcr_cassette 'trolley_alert'
+
+    before do
+      @hash = SeptaScheduler::Alert.new('34').to_hash
+    end
+
+    it 'reports the alert details as a hash' do
+      expect(@hash).to eq({
+        "route_id"=>"trolley_route_34",
+        "route_name"=>"34",
+        "current_message"=>"some trolley message",
+        "advisory_message"=>"",
+        "detour_message"=>"trolley detour",
+        "detour_start_location"=>"",
+        "detour_start_date_time"=>"",
+        "detour_end_date_time"=>"",
+        "detour_reason"=>"trolley detour reason",
+        "last_updated"=>"Mar 13 2015 08:51:41:473AM",
+        "isSnow"=>"N"
+      })
+    end
+  end
 end

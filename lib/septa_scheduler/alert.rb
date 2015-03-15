@@ -11,21 +11,25 @@ module SeptaScheduler
     end
 
     def message
-      @message ||= get['current_message']
+      get['current_message']
     end
 
     def detour
-      @detour ||= get['detour_message']
+      get['detour_message']
     end
 
     def detour_reason
-      @detour_reason ||= get['detour_reason']
+      get['detour_reason']
+    end
+
+    def to_hash
+      get
     end
 
     private
 
     def get
-      JSON.parse(do_get(@uri))[0]
+      @get ||= JSON.parse(do_get(@uri))[0]
     end
 
     def route_param(route_id)
