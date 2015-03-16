@@ -4,6 +4,8 @@ require 'septa_scheduler'
 require 'rack/test'
 require 'vcr'
 
+Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
+
 ENV['RACK_ENV'] = 'test'
 
 VCR.configure do |c|
