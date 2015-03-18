@@ -13,8 +13,8 @@ shared_examples 'a web response' do
         context 'an inbound stop' do
           before { @inbound_stop = @inbound[0] }
 
-          it 'reports a StopName' do
-            expect(@inbound_stop['StopName']).to eq 'Baltimore Av & 50th St'
+          it 'reports a stopName' do
+            expect(@inbound_stop['stopName']).to eq 'Baltimore Av & 50th St'
           end
         end
       end
@@ -29,8 +29,8 @@ shared_examples 'a web response' do
         context 'an outbound stop' do
           before { @outbound_stop = @outbound[0] }
 
-          it 'reports a StopName' do
-            expect(@outbound_stop['StopName']).to eq 'Baltimore Av & 50th St'
+          it 'reports a stopName' do
+            expect(@outbound_stop['stopName']).to eq 'Baltimore Av & 50th St'
           end
         end
       end
@@ -38,44 +38,32 @@ shared_examples 'a web response' do
       context 'the alert' do
         before { @alert = @response['alert'] }
 
-        it 'reports a "route_id"' do
-          expect(@alert['route_id']).to eq 'trolley_route_34'
+        it 'reports an "advisoryMessage"' do
+          expect(@alert['advisoryMessage']).to eq 'advisory message'
         end
 
-        it 'reports a "route_name"' do
-          expect(@alert['route_name']).to eq '34'
+        it 'reports a "detourMessage"' do
+          expect(@alert['detourMessage']).to eq 'detour message'
         end
 
-        it 'reports an "advisory_message"' do
-          expect(@alert['advisory_message']).to eq 'advisory message'
+        it 'reports a "detourStartLocation"' do
+          expect(@alert['detourStartLocation']).to eq 'detour start location'
         end
 
-        it 'reports a "detour_message"' do
-          expect(@alert['detour_message']).to eq 'detour message'
+        it 'reports a "detourStartTime"' do
+          expect(@alert['detourStartTime']).to eq 'start date time'
         end
 
-        it 'reports a "detour_start_location"' do
-          expect(@alert['detour_start_location']).to eq 'detour start location'
+        it 'reports a "detourEndTime"' do
+          expect(@alert['detourEndTime']).to eq 'end date time'
         end
 
-        it 'reports a "detour_start_date_time"' do
-          expect(@alert['detour_start_date_time']).to eq 'start date time'
+        it 'reports a "detourReason"' do
+          expect(@alert['detourReason']).to eq 'reason'
         end
 
-        it 'reports a "detour_end_date_time"' do
-          expect(@alert['detour_end_date_time']).to eq 'end date time'
-        end
-
-        it 'reports a "detour_reason"' do
-          expect(@alert['detour_reason']).to eq 'reason'
-        end
-
-        it 'reports a "last_updated"' do
-          expect(@alert['last_updated']).to eq 'Mar 15 2015 04:59:05:003PM'
-        end
-
-        it 'reports an "isSnow"' do
-          expect(@alert['isSnow']).to eq 'N'
+        it 'reports a "lastUpdated"' do
+          expect(@alert['lastUpdated']).to eq 'Mar 15 2015 04:59:05:003PM'
         end
       end
     end

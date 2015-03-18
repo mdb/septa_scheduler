@@ -45,8 +45,7 @@ http_interactions:
       - '3'
     body:
       encoding: UTF-8
-      string: '[{"route_id":"bus_route_24","route_name":"24","current_message":"some bus message","advisory_message":"","detour_message":"","detour_start_location":"","detour_start_date_time":"","detour_end_date_time":"","detour_reason":"","last_updated":"Mar  5
-        2015 04:18:44:513PM","isSnow":"N"}]'
+      string: '[{"route_id":"bus_route_24","route_name":"24","current_message":"some bus message","advisory_message":"bus advisory message","detour_message":"","detour_start_location":"","detour_start_date_time":"","detour_end_date_time":"","detour_reason":"","last_updated":"Mar 5 2015 04:18:44:513PM","isSnow":"N"}]'
     http_version: 
   recorded_at: Fri, 13 Mar 2015 20:32:06 GMT
 recorded_with: VCR 2.9.3

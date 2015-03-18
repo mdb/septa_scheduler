@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'thin'
 gem 'rake'
+gem 'tilt-jbuilder'
 gem 'septa_stop_locator', git: 'https://github.com/mdb/septa_stop_locator.git'
 
 group :test do

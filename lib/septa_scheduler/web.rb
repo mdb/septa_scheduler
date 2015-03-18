@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'septa_stop_locator'
+require 'tilt/jbuilder.rb'
 
 module SeptaScheduler
   class Web < Sinatra::Base
@@ -7,6 +8,8 @@ module SeptaScheduler
     end
 
     get '/point' do
+      alert = SeptaScheduler::Alert.new(params['route'])
+
       stops = SeptaStopLocator.find(
         params['lat'].to_f,
         params['lng'].to_f,
@@ -15,10 +18,12 @@ module SeptaScheduler
 
       schedules = schedules_from(stops, params['route'])
 
-      response_from(schedules)
+      template.render(nil, schedules: schedules, alert: alert)
     end
 
     get '/address' do
+      alert = SeptaScheduler::Alert.new(params['route'])
+
       coordinates = SeptaScheduler::Geocoder.new(params['address']).coordinates
 
       stops = SeptaStopLocator.find(
@@ -29,7 +34,7 @@ module SeptaScheduler
 
       schedules = schedules_from(stops, params['route'])
 
-      response_from(schedules)
+      template.render(nil, schedules: schedules, alert: alert)
     end
 
     def schedule(stop, route)
@@ -43,14 +48,10 @@ module SeptaScheduler
        schedule(stops[1], route)]
     end
 
-    def response_from(schedules)
-      alert = SeptaScheduler::Alert.new('34')
+    def template
+      view = File.expand_path('../views/scheduler.json.jbuilder', __FILE__)
 
-      {
-        inbound:  schedules.find { |sched| sched[0]['Direction'] == '1' },
-        outbound: schedules.find { |sched| sched[0]['Direction'] != '1' },
-        alert: alert.to_hash
-      }.to_json
+      @template ||= Tilt::JbuilderTemplate.new(view)
     end
   end
 end

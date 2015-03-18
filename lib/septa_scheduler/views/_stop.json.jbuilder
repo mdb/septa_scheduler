@@ -1,0 +1,6 @@
+json.day        stop['day']
+json.date       stop['DateCalender']
+json.direction  stop['Direction']
+json.route      stop['Route']
+json.stopName   stop['StopName']
+json.time       stop['date']
