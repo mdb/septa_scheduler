@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'septa_stop_locator'
 require 'tilt/jbuilder.rb'
-require 'rack/cors'
 
 module SeptaScheduler
   class Web < Sinatra::Base
