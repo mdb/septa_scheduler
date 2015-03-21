@@ -1,9 +1,11 @@
 require 'sinatra'
 require 'septa_stop_locator'
 require 'tilt/jbuilder.rb'
+require 'rack/cors'
 
 module SeptaScheduler
   class Web < Sinatra::Base
+
     get '/' do
     end
 
@@ -17,6 +19,8 @@ module SeptaScheduler
       )
 
       schedules = schedules_from(stops, params['route'])
+
+      allow_cors
 
       template.render(nil, schedules: schedules, alert: alert)
     end
@@ -33,6 +37,8 @@ module SeptaScheduler
       )
 
       schedules = schedules_from(stops, params['route'])
+
+      allow_cors
 
       template.render(nil, schedules: schedules, alert: alert)
     end
@@ -52,6 +58,12 @@ module SeptaScheduler
       view = File.expand_path('../views/scheduler.json.jbuilder', __FILE__)
 
       @template ||= Tilt::JbuilderTemplate.new(view)
+    end
+
+    def allow_cors
+      response['Access-Control-Allow-Origin'] = '*'
+      response['Access-Control-Allow-Methods'] = 'GET'
+      response['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type'
     end
   end
 end
