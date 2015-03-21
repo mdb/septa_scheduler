@@ -5,6 +5,7 @@ gem 'thin'
 gem 'rake'
 gem 'tilt-jbuilder'
 gem 'septa_stop_locator', git: 'https://github.com/mdb/septa_stop_locator.git'
+gem 'rack-cors'
 
 group :test do
   gem 'rspec'
