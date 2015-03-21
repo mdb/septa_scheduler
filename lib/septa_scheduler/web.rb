@@ -4,6 +4,9 @@ require 'tilt/jbuilder.rb'
 
 module SeptaScheduler
   class Web < Sinatra::Base
+    before do
+      content_type 'application/json'
+    end
 
     get '/' do
     end
@@ -18,8 +21,6 @@ module SeptaScheduler
       )
 
       schedules = schedules_from(stops, params['route'])
-
-      allow_cors
 
       template.render(nil, schedules: schedules, alert: alert)
     end
@@ -36,8 +37,6 @@ module SeptaScheduler
       )
 
       schedules = schedules_from(stops, params['route'])
-
-      allow_cors
 
       template.render(nil, schedules: schedules, alert: alert)
     end
