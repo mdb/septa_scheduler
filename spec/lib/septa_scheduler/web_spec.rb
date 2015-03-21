@@ -19,8 +19,6 @@ describe SeptaScheduler::Web do
     end
 
     it_behaves_like 'a web response'
-
-    it_behaves_like 'a CORS response'
   end
 
   describe '/address' do
@@ -33,7 +31,5 @@ describe SeptaScheduler::Web do
     end
 
     it_behaves_like 'a web response'
-
-    it_behaves_like 'a CORS response'
   end
 end
