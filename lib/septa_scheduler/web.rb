@@ -57,11 +57,5 @@ module SeptaScheduler
 
       @template ||= Tilt::JbuilderTemplate.new(view)
     end
-
-    def allow_cors
-      response['Access-Control-Allow-Origin'] = '*'
-      response['Access-Control-Allow-Methods'] = 'GET, OPTIONS'
-      response['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type'
-    end
   end
 end
