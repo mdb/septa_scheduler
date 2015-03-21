@@ -4,13 +4,11 @@ require 'septa_scheduler'
 require 'rack/cors'
 
 use Rack::Cors do
-
-  # allow all origins in development
   allow do
     origins '*'
     resource '*',
-      :headers => :any,
-      :methods => [:get, :post, :delete, :put, :options]
+      headers: :any,
+      methods: [:get, :options]
   end
 end
 
