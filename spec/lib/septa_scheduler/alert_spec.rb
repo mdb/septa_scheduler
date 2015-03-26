@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe SeptaScheduler::Alert do
   describe '#advisory_message' do
-    context 'when the route id is a trolley route' do
-      use_vcr_cassette 'trolley_alert'
-
+    context 'when the route id is a trolley route', vcr: { cassette_name: 'trolley_alert' } do
       before do
         @message = SeptaScheduler::Alert.new('34').advisory_message
       end
@@ -14,9 +12,7 @@ describe SeptaScheduler::Alert do
       end
     end
 
-    context 'when the route id is not a trolley route' do
-      use_vcr_cassette 'bus_alert'
-
+    context 'when the route id is not a trolley route', vcr: { cassette_name: 'bus_alert' } do
       before do
         @message = SeptaScheduler::Alert.new('24').advisory_message
       end
@@ -28,9 +24,7 @@ describe SeptaScheduler::Alert do
   end
 
   describe '#current_message' do
-    context 'when the route id is a trolley route' do
-      use_vcr_cassette 'trolley_alert'
-
+    context 'when the route id is a trolley route', vcr: { cassette_name: 'trolley_alert' } do
       before do
         @message = SeptaScheduler::Alert.new('34').current_message
       end
@@ -40,9 +34,7 @@ describe SeptaScheduler::Alert do
       end
     end
 
-    context 'when the route id is not a trolley route' do
-      use_vcr_cassette 'bus_alert'
-
+    context 'when the route id is not a trolley route', vcr: { cassette_name: 'bus_alert' } do
       before do
         @message = SeptaScheduler::Alert.new('24').current_message
       end
@@ -53,9 +45,7 @@ describe SeptaScheduler::Alert do
     end
   end
 
-  describe '#detour_message' do
-    use_vcr_cassette 'trolley_alert'
-
+  describe '#detour_message', vcr: { cassette_name: 'trolley_alert' } do
     before do
       @detour = SeptaScheduler::Alert.new('34').detour_message
     end
@@ -65,9 +55,7 @@ describe SeptaScheduler::Alert do
     end
   end
 
-  describe '#detour_reason' do
-    use_vcr_cassette 'trolley_alert'
-
+  describe '#detour_reason', vcr: { cassette_name: 'trolley_alert' } do
     before do
       @reason = SeptaScheduler::Alert.new('34').detour_reason
     end
@@ -77,9 +65,7 @@ describe SeptaScheduler::Alert do
     end
   end
 
-  describe '#detour_start_location' do
-    use_vcr_cassette 'trolley_alert'
-
+  describe '#detour_start_location', vcr: { cassette_name: 'trolley_alert' } do
     before do
       @location = SeptaScheduler::Alert.new('34').detour_start_location
     end
@@ -89,9 +75,7 @@ describe SeptaScheduler::Alert do
     end
   end
 
-  describe '#detour_start_time' do
-    use_vcr_cassette 'trolley_alert'
-
+  describe '#detour_start_time', vcr: { cassette_name: 'trolley_alert' } do
     before do
       @time = SeptaScheduler::Alert.new('34').detour_start_time
     end
@@ -101,9 +85,7 @@ describe SeptaScheduler::Alert do
     end
   end
 
-  describe '#detour_end_time' do
-    use_vcr_cassette 'trolley_alert'
-
+  describe '#detour_end_time', vcr: { cassette_name: 'trolley_alert' } do
     before do
       @time = SeptaScheduler::Alert.new('34').detour_end_time
     end
@@ -113,9 +95,7 @@ describe SeptaScheduler::Alert do
     end
   end
 
-  describe '#last_updated' do
-    use_vcr_cassette 'trolley_alert'
-
+  describe '#last_updated', vcr: { cassette_name: 'trolley_alert' } do
     before do
       @updated = SeptaScheduler::Alert.new('34').last_updated
     end
@@ -125,9 +105,7 @@ describe SeptaScheduler::Alert do
     end
   end
 
-  describe '#snow?' do
-    use_vcr_cassette 'trolley_alert'
-
+  describe '#snow?', vcr: { cassette_name: 'trolley_alert' } do
     before do
       @snow = SeptaScheduler::Alert.new('34').snow?
     end
@@ -137,9 +115,7 @@ describe SeptaScheduler::Alert do
     end
   end
 
-  describe '#to_hash' do
-    use_vcr_cassette 'trolley_alert'
-
+  describe '#to_hash', vcr: { cassette_name: 'trolley_alert' } do
     before do
       @hash = SeptaScheduler::Alert.new('34').to_hash
     end

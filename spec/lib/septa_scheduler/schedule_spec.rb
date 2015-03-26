@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe SeptaScheduler::Schedule do
-  describe '#get' do
-    use_vcr_cassette 'schedule'
-
+  describe '#get', vcr: { cassette_name: 'schedule' } do
     before do
       @schedule = SeptaScheduler::Schedule.new(20869, 34)
     end

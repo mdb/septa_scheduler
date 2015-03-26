@@ -9,9 +9,7 @@ describe SeptaScheduler::Web do
     end
   end
 
-  describe '/point' do
-    use_vcr_cassette 'web_point'
-
+  describe '/point', vcr: { cassette_name: 'web_point' } do
     before { get '/point?lat=39.946936&lng=-75.235519&route=34' }
 
     it 'is successful' do
@@ -21,9 +19,7 @@ describe SeptaScheduler::Web do
     it_behaves_like 'a web response'
   end
 
-  describe '/address' do
-    use_vcr_cassette 'web_address'
-
+  describe '/address', vcr: { cassette_name: 'web_address' } do
     before { get '/address?address=5019%20Walton%20Street&route=34' }
 
     it 'is successful' do
