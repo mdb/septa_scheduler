@@ -1,23 +1,10 @@
 inbound  = schedules.find { |sched| sched[0]['Direction'] == '1' }
 outbound = schedules.find { |sched| sched[0]['Direction'] != '1' }
+view     = File.expand_path('../_stop.json.jbuilder', __FILE__)
+template = Tilt::JbuilderTemplate.new(view)
 
-json.inbound inbound.each do |inbound|
-  json.day        inbound['day']
-  json.date       inbound['DateCalender']
-  json.direction  inbound['Direction']
-  json.route      inbound['Route']
-  json.stopName   inbound['StopName']
-  json.time       inbound['date']
-end
-
-json.outbound outbound.each do |outbound|
-  json.day        outbound['day']
-  json.date       outbound['DateCalender']
-  json.direction  outbound['Direction']
-  json.route      outbound['Route']
-  json.stopName   outbound['StopName']
-  json.time       outbound['date']
-end
+json.inbound  inbound.map  { |inbound|  JSON.parse template.render(nil, stop: inbound) }
+json.outbound outbound.map { |outbound| JSON.parse template.render(nil, stop: outbound) }
 
 json.alert do |json|
   json.advisoryMessage        alert.advisory_message
