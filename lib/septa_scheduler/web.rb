@@ -48,8 +48,7 @@ module SeptaScheduler
     end
 
     def schedules_from(stops, route)
-      [schedule(stops[0], route),
-       schedule(stops[1], route)]
+      stops.map { |stop| schedule(stop, route) }
     end
 
     def template
