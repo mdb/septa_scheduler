@@ -6,8 +6,8 @@ A simple Sinatra wrapper for finding the next scheduled SEPTA bus/trolley stops 
 
 ## Endpoints
 
-* `/address?address=\<some address\>&route=\<some route number\>`
-* `/point?lat=\<some lat\>&lng=\<some long\>&route=\<some route number\>`
+* `/address?address=<some address>&route=<some route number>`
+* `/point?lat=<some lat>&lng=<some long>&route=<some route number>`
 
 Examples:
 
