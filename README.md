@@ -20,5 +20,5 @@ Get the route 34 stop closest to 5000 Hazel Avenue, the next 4 inbound/outbound 
 Get the route 34 stop closest to 39.9539910, -75.1682170, the next 4 inbound/outbound scheduled stops, and any relevant SEPTA alerts:
 
 ```
-`/point?lat=39.9539910&lng=-75.1682170&route=34`
+/point?lat=39.9539910&lng=-75.1682170&route=34
 ```
