@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mdb/septa_stop_locator.git
-  revision: 187f4deeadb0b47df544032f2a7c1def6b4aafc2
+  revision: b2cfe93b6e412237d66c0064d52c8bec95781a3c
   specs:
     septa_stop_locator (0.0.1)
       haversine (= 0.3.0)
@@ -8,66 +8,68 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.0)
+    activesupport (4.2.5)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.7)
-    crack (0.4.2)
+    addressable (2.4.0)
+    crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    daemons (1.1.9)
+    daemons (1.2.3)
     diff-lcs (1.2.5)
-    eventmachine (1.0.7)
+    eventmachine (1.0.9.1)
+    hashdiff (0.2.3)
     haversine (0.3.0)
     i18n (0.7.0)
-    jbuilder (2.2.11)
-      activesupport (>= 3.0.0, < 5)
+    jbuilder (2.4.0)
+      activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    json (1.8.2)
-    minitest (5.5.1)
-    multi_json (1.11.0)
-    rack (1.6.0)
-    rack-cors (0.3.1)
+    json (1.8.3)
+    minitest (5.8.4)
+    multi_json (1.11.2)
+    rack (1.6.4)
+    rack-cors (0.4.0)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rake (10.4.2)
-    rspec (3.2.0)
-      rspec-core (~> 3.2.0)
-      rspec-expectations (~> 3.2.0)
-      rspec-mocks (~> 3.2.0)
-    rspec-core (3.2.1)
-      rspec-support (~> 3.2.0)
-    rspec-expectations (3.2.0)
+    rake (10.5.0)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.1)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.2.0)
-    rspec-mocks (3.2.1)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.2.0)
-    rspec-support (3.2.2)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     safe_yaml (1.0.4)
-    sinatra (1.4.5)
+    sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
-      tilt (~> 1.3, >= 1.3.4)
-    thin (1.6.3)
+      tilt (>= 1.3, < 3)
+    thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0)
+      eventmachine (~> 1.0, >= 1.0.4)
       rack (~> 1.0)
     thread_safe (0.3.5)
-    tilt (1.4.1)
-    tilt-jbuilder (0.6.1)
+    tilt (2.0.2)
+    tilt-jbuilder (0.7.0)
       jbuilder
-      tilt (<= 1.5.0)
+      tilt (>= 1.3.0, < 3)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    vcr (2.9.3)
-    webmock (1.20.4)
+    vcr (3.0.1)
+    webmock (1.22.6)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
+      hashdiff
 
 PLATFORMS
   ruby
@@ -83,3 +85,6 @@ DEPENDENCIES
   tilt-jbuilder
   vcr
   webmock
+
+BUNDLED WITH
+   1.11.2
