@@ -43,7 +43,7 @@ GEM
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
     safe_yaml (1.0.4)
-    septa_stop_locator (0.0.1)
+    septa_stop_locator (0.0.2)
       haversine (= 0.3.0)
     sinatra (1.4.6)
       rack (~> 1.4)
@@ -80,6 +80,3 @@ DEPENDENCIES
   tilt-jbuilder
   vcr
   webmock
-
-BUNDLED WITH
-   1.11.2
