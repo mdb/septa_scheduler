@@ -3,6 +3,12 @@ shared_examples 'a web response' do
     context 'its response' do
       before { @response = JSON.parse(last_response.body) }
 
+      context 'the stop name' do
+        it 'reports the correct stop name address' do
+          expect(@response['stopName']).to eq 'Baltimore Av & 50th St'
+        end
+      end
+
       context 'the inbound stops' do
         before { @inbound = @response['inbound'] }
 

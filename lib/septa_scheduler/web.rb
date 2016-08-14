@@ -43,8 +43,8 @@ module SeptaScheduler
 
     def schedule(stop, route)
       SeptaScheduler::Schedule
-      .new(stop['stopid'], route)
-      .get[route]
+        .new(stop['stopid'], route)
+        .get[route]
     end
 
     def schedules_from(stops, route)

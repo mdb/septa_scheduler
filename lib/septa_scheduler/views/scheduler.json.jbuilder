@@ -3,6 +3,7 @@ outbound = schedules.find { |sched| sched[0]['Direction'] != '1' }
 view     = File.expand_path('../_stop.json.jbuilder', __FILE__)
 template = Tilt::JbuilderTemplate.new(view)
 
+json.stopName inbound.first['StopName']
 json.inbound  inbound.map  { |inbound|  JSON.parse template.render(nil, stop: inbound) }
 json.outbound outbound.map { |outbound| JSON.parse template.render(nil, stop: outbound) }
 

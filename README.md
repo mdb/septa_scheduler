@@ -2,7 +2,7 @@
 
 # septa_scheduler
 
-A simple Sinatra wrapper for finding the next scheduled SEPTA bus/trolley stops closest to an address or lat/long point.
+A simple Sinatra wrapper for finding the next scheduled SEPTA bus/trolley stops closest to an address or lat/long point. `septa_scheduler` also publishes any relevant alerts regarding service and schedule interruptions.
 
 ## Endpoints
 
